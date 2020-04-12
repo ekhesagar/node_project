@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' >
+    <link rel='stylesheet' href='/stylesheets/main.css' >
+</head>
+<body>
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light ">
+    <div class='container'>
+        <a class="navbar-brand" href="/">YelpCamp</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+            <div class="nav navbar-nav">
+                <% if(user == null){ %>
+                    <a class="nav-item-right nav-link active" href="/login">Login</a>
+                    <a class="nav-item-right nav-link active" href="/register">Sign Up</a>
+                <% }else{ %>
+                    <a class="nav-item-right nav-link active" href="">Hello  <strong><%= user.username %> </strong></a>
+                    <form class="nav-item-right form-inline" action="/logout" method='POST'>
+                        <input class='input' type="submit" value=' Logout'/>
+                    </form>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class='container'>
+    <% if(error && error.length){ %>
+    <div class="alert alert-danger">
+        <%= error %>
+    </div>
+    <% }else if(success && success.length){ %>
+    <div class="alert alert-success">
+        <%= success %>
+    </div>
+    <% } %>
+</div>
+    
+
+    

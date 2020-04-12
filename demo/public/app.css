@@ -1,0 +1,9 @@
+/* body{
+    background-color: red;
+} */
+
+body { 
+    display: none;
+    padding-top: 100px;
+    background: red;
+}

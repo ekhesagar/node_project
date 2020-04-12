@@ -5,6 +5,7 @@ let middleware = require('../middleware');
 
 
 //Campgrounds page
+
 router.get('/campgrounds', (req,res) => {
     console.log(req.session);
     Campground.find({}, (err, campground) => {
